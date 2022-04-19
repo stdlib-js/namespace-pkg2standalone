@@ -48,6 +48,8 @@ Alternatively,
 -   If you are using Deno, visit the [`deno` branch][deno-url].
 -   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
 
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
 </section>
 
 <section class="usage">
@@ -64,7 +66,7 @@ Returns the standalone package name associated with a provided internal package 
 
 ```javascript
 var v = pkg2standalone( '@stdlib/math-base-special-sin' );
-/- returns '@stdlib-math-base-special-sin'
+// returns '@stdlib/math-base-special-sin'
 ```
 
 If provided an unrecognized `pkg`, the function returns `null`.
@@ -285,6 +287,7 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [deno-url]: https://github.com/stdlib-js/namespace-pkg2standalone/tree/deno
 [umd-url]: https://github.com/stdlib-js/namespace-pkg2standalone/tree/umd
 [esm-url]: https://github.com/stdlib-js/namespace-pkg2standalone/tree/esm
+[branches-url]: https://github.com/stdlib-js/namespace-pkg2standalone/blob/main/branches.md
 
 [pddl-1.0]: http://opendatacommons.org/licenses/pddl/1.0/
 

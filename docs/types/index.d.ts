@@ -26,7 +26,7 @@
 *
 * @example
 * var v = pkg2standalone( '@stdlib/math-base-special-sin' );
-* /- returns '@stdlib-math-base-special-sin'
+* // returns '@stdlib/math-base-special-sin'
 */
 declare function pkg2standalone( pkg: string ): string | null;
 
