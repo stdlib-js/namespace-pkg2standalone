@@ -34,14 +34,31 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/namespace-pkg2standalone
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import pkg2standalone from 'https://cdn.jsdelivr.net/gh/stdlib-js/namespace-pkg2standalone@esm/index.mjs';
+var pkg2standalone = require( '@stdlib/namespace-pkg2standalone' );
 ```
 
 #### pkg2standalone( pkg )
@@ -82,16 +99,11 @@ var v = pkg2standalone( 'unrecognized_pkg_beep_boop_bop_bip' );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@esm/index.mjs';
-import aliases from 'https://cdn.jsdelivr.net/gh/stdlib-js/namespace-aliases@esm/index.mjs';
-import alias2pkg from 'https://cdn.jsdelivr.net/gh/stdlib-js/namespace-alias2pkg@esm/index.mjs';
-import pkg2standalone from 'https://cdn.jsdelivr.net/gh/stdlib-js/namespace-pkg2standalone@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var aliases = require( '@stdlib/namespace-aliases' );
+var alias2pkg = require( '@stdlib/namespace-alias2pkg' );
+var pkg2standalone = require( '@stdlib/namespace-pkg2standalone' );
 
 var list;
 var len;
@@ -110,10 +122,6 @@ for ( i = 0; i < 100; i++ ) {
     console.log( 'alias: %s. pkg: %s.', list[ idx ], v1 );
     console.log( 'pkg: %s. standalone: %s.', v1, v2 );
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -122,7 +130,69 @@ for ( i = 0; i < 100; i++ ) {
 
 <!-- Section for describing a command-line interface. -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use as a general utility, install the CLI package globally
+
+```bash
+npm install -g @stdlib/namespace-pkg2standalone-cli
+```
+
+</section>
+<!-- CLI usage documentation. -->
+
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: stdlib-pkg2standalone [options] namespace-pkg2standalone
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- CLI usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- CLI usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ stdlib-pkg2standalone '@stdlib/math-base-special-sin'
+@stdlib/math-base-special-sin
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
@@ -148,11 +218,11 @@ The data files (databases) are licensed under an [Open Data Commons Public Domai
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/namespace/alias2pkg`][@stdlib/namespace/alias2pkg]</span><span class="delimiter">: </span><span class="description">return the package name associated with a specified alias.</span>
--   <span class="package-name">[`@stdlib/namespace/alias2standalone`][@stdlib/namespace/alias2standalone]</span><span class="delimiter">: </span><span class="description">return the standalone package name associated with a specified alias.</span>
--   <span class="package-name">[`@stdlib/namespace/aliases`][@stdlib/namespace/aliases]</span><span class="delimiter">: </span><span class="description">standard library aliases.</span>
--   <span class="package-name">[`@stdlib/namespace/pkg2alias`][@stdlib/namespace/pkg2alias]</span><span class="delimiter">: </span><span class="description">return the alias associated with a specified package name.</span>
--   <span class="package-name">[`@stdlib/namespace/pkg2related`][@stdlib/namespace/pkg2related]</span><span class="delimiter">: </span><span class="description">return package names related to a specified package name.</span>
+-   <span class="package-name">[`@stdlib/namespace-alias2pkg`][@stdlib/namespace/alias2pkg]</span><span class="delimiter">: </span><span class="description">return the package name associated with a specified alias.</span>
+-   <span class="package-name">[`@stdlib/namespace-alias2standalone`][@stdlib/namespace/alias2standalone]</span><span class="delimiter">: </span><span class="description">return the standalone package name associated with a specified alias.</span>
+-   <span class="package-name">[`@stdlib/namespace-aliases`][@stdlib/namespace/aliases]</span><span class="delimiter">: </span><span class="description">standard library aliases.</span>
+-   <span class="package-name">[`@stdlib/namespace-pkg2alias`][@stdlib/namespace/pkg2alias]</span><span class="delimiter">: </span><span class="description">return the alias associated with a specified package name.</span>
+-   <span class="package-name">[`@stdlib/namespace-pkg2related`][@stdlib/namespace/pkg2related]</span><span class="delimiter">: </span><span class="description">return package names related to a specified package name.</span>
 
 </section>
 
@@ -167,7 +237,7 @@ The data files (databases) are licensed under an [Open Data Commons Public Domai
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -212,6 +282,10 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-authors]: https://github.com/stdlib-js/stdlib/graphs/contributors
 
+[cli-section]: https://github.com/stdlib-js/namespace-pkg2standalone#cli
+[cli-url]: https://github.com/stdlib-js/namespace-pkg2standalone/tree/cli
+[@stdlib/namespace-pkg2standalone]: https://github.com/stdlib-js/namespace-pkg2standalone/tree/main
+
 [umd]: https://github.com/umdjs/umd
 [es-module]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
@@ -228,15 +302,15 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/namespace/alias2pkg]: https://github.com/stdlib-js/namespace-alias2pkg/tree/esm
+[@stdlib/namespace/alias2pkg]: https://github.com/stdlib-js/namespace-alias2pkg
 
-[@stdlib/namespace/alias2standalone]: https://github.com/stdlib-js/namespace-alias2standalone/tree/esm
+[@stdlib/namespace/alias2standalone]: https://github.com/stdlib-js/namespace-alias2standalone
 
-[@stdlib/namespace/aliases]: https://github.com/stdlib-js/namespace-aliases/tree/esm
+[@stdlib/namespace/aliases]: https://github.com/stdlib-js/namespace-aliases
 
-[@stdlib/namespace/pkg2alias]: https://github.com/stdlib-js/namespace-pkg2alias/tree/esm
+[@stdlib/namespace/pkg2alias]: https://github.com/stdlib-js/namespace-pkg2alias
 
-[@stdlib/namespace/pkg2related]: https://github.com/stdlib-js/namespace-pkg2related/tree/esm
+[@stdlib/namespace/pkg2related]: https://github.com/stdlib-js/namespace-pkg2related
 
 <!-- </related-links> -->
 
